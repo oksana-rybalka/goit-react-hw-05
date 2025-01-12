@@ -1,0 +1,71 @@
+.homepage {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.homepageHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #373333;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.headerText {
+  margin: 0;
+}
+
+.headerLink {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.homepageMain {
+  margin-top: 80px;
+}
+
+.titleTrending {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.loadingMessage,
+.errorMessage {
+  color: red;
+  font-size: 18px;
+}
+
+.moviesScroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.movieCard {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.movieImg {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.movieTitle {
+  font-size: 16px;
+  font-weight: bold;
+}
