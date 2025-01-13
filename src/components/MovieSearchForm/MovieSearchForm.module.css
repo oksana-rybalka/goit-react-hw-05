@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgb(150, 129, 172);
+  padding: 50px 20px;
+  border-radius: 25px;
+  align-items: center;
+}
+.input {
+  max-width: 220px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  color: blueviolet;
+  font-size: 20px;
+}
+.button:hover {
+  background-color: rgb(111, 20, 195);
+}
+.button {
+  background-color: blueviolet;
+  color: aliceblue;
+  font-size: 20px;
+  max-width: 120;
+}

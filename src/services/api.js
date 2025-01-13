@@ -53,3 +53,41 @@ export const fetchMovieDetails = async (movieId) => {
     throw new Error("Failed to fetch movie details.");
   }
 };
+
+export const fetchMovieCast = async (movieId) => {
+  const url = `${API_BASE_URL}/movie/${movieId}/credits`;
+  const options = {
+    headers: {
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, options);
+    return response.data.cast;
+  } catch (error) {
+    console.error("Error fetching movie cast:", error.message);
+    throw new Error("Failed to fetch movie cast.");
+  }
+};
+
+export const fetchMovieReviews = async (movieId) => {
+  const url = `${API_BASE_URL}/movie/${movieId}/reviews`;
+  const options = {
+    headers: {
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+    params: {
+      language: "en-US",
+      page: 1,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, options);
+    return response.data.results;
+  } catch (error) {
+    console.error("Error fetching movie reviews:", error.message);
+    throw new Error("Failed to fetch movie reviews.");
+  }
+};

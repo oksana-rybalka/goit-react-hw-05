@@ -6,28 +6,34 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import { fetchMovieDetails } from "../api/api";
+import { fetchMovieDetails } from "../../services/api";
 import s from "./MovieDetailPage.module.css";
+import Spinner from "../../components/Spinner/Spinner";
 
 const MovieDetailPage = () => {
-  const { movieId } = useParams(); // Отримуємо ID фільму з URL
-  const location = useLocation(); // Зберігаємо місце, звідки прийшов користувач
-  const navigate = useNavigate(); // Використовуємо для навігації назад
-  const movieRef = useRef(null); // Зберігаємо дані про фільм
-  const [movie, setMovie] = useState(null); // Стан для збереження даних про фільм
-  const [error, setError] = useState(null); // Стан для помилок
-  const [isLoading, setIsLoading] = useState(false); // Стан для завантаження
+  const { movieId } = useParams();
+  const location = useLocation(); 
+  const navigate = useNavigate();
+  
+  const movieRef = useRef(null); 
+  
+  const [movie, setMovie] = useState(null);
+  
+  const [error, setError] = useState(null); 
+  
+  const [isLoading, setIsLoading] = useState(false); 
 
-  // Збереження попереднього шляху
+  
+  
   const previousLocation = location.state?.from || "/movies";
 
   useEffect(() => {
     const getMovieDetails = async () => {
       setIsLoading(true);
       try {
-        const data = await fetchMovieDetails(movieId); // Отримуємо дані про фільм
-        movieRef.current = data; // Зберігаємо дані у `useRef`
-        setMovie(data); // Оновлюємо стан
+        const data = await fetchMovieDetails(movieId);
+        movieRef.current = data; 
+        setMovie(data); 
       } catch (error) {
         setError("Failed to fetch movie details. Please try again later.");
       } finally {
@@ -36,18 +42,18 @@ const MovieDetailPage = () => {
     };
 
     getMovieDetails();
-  }, [movieId]); // Залежність — `movieId`
+  }, [movieId]); 
 
   const handleGoBack = () => {
-    navigate(previousLocation); // Повертаємось на попередню сторінку або на "/movies"
+    navigate(previousLocation); 
   };
 
   if (isLoading) {
-    return <p>Loading...</p>; // Повідомлення про завантаження
+    return <Spinner />; 
   }
 
   if (error) {
-    return <p className={s.errorMessage}>{error}</p>; // Повідомлення про помилку
+    return <p className={s.errorMessage}>{error}</p>; 
   }
 
   return (
@@ -68,7 +74,7 @@ const MovieDetailPage = () => {
             className={s.moviePoster}
           />
           <div className={s.movieInfo}>
-            <h2>{movie.title}</h2>
+            <h2 className={s.nameMovie}>{movie.title}</h2>
             <p>
               <strong>Release Date:</strong> {movie.release_date || "N/A"}
             </p>
@@ -107,8 +113,6 @@ const MovieDetailPage = () => {
           </li>
         </ul>
       </nav>
-
-      {/* Відображення дочірніх маршрутів */}
       <Outlet />
     </div>
   );

@@ -1,0 +1,19 @@
+.movieDetailPage {
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  background-color: rgb(150, 129, 172);
+}
+.movieDetails {
+  display: flex;
+  flex-wrap: wrap;
+}
+.moviePoster {
+  border-radius: 20px;
+  box-shadow: ;
+}
+.movieInfo {
+  color: aliceblue;
+}

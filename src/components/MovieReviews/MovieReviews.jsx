@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { fetchMovieReviews } from "../../crs/services/api";
+import { fetchMovieReviews } from "../../services/api";
 import s from "./MovieReviews.module.css";
 
 const MovieReviews = ({ movieId }) => {

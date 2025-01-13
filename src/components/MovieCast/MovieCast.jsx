@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { fetchMovieCast } from "../../crs/services/api";
 import s from "./MovieCast.module.css";
+import { fetchMovieCast } from "../../services/api";
 
 const MovieCast = ({ movieId }) => {
   const [cast, setCast] = useState([]);

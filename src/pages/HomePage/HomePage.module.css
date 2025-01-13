@@ -8,9 +8,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #373333;
+  background-color: #1f1e20;
   color: #fff;
-  padding: 10px 20px;
+  padding: 20px 30px;
   z-index: 1000;
   text-align: center;
 }
@@ -25,7 +25,7 @@
 }
 
 .headerLink {
-  color: #1e90ff;
+  color: rbg(111, 20, 195);
   text-decoration: none;
 }
 
@@ -34,8 +34,10 @@
 }
 
 .titleTrending {
+  padding-top: 30px;
   margin-bottom: 20px;
   font-size: 24px;
+  color: blueviolet;
 }
 
 .loadingMessage,
@@ -44,17 +46,12 @@
   font-size: 18px;
 }
 
-.moviesScroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-}
-
-.movieCard {
+/* .movieCard {
   display: block;
   text-align: center;
   text-decoration: none;
   color: inherit;
+  width: calc(100% - );
 }
 
 .movieImg {
@@ -68,4 +65,5 @@
 .movieTitle {
   font-size: 16px;
   font-weight: bold;
-}
+  margin-top: 0;
+} */
