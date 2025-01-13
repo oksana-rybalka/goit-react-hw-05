@@ -29,7 +29,9 @@ const HomePage = () => {
   return (
     <div className={s.homepage}>
       <header className={s.homepageHeader}>
-        <h1 className={s.logo}>Kinoshka</h1>
+        <Link to="/" className={s.logo}>
+          Kinoshka
+        </Link>
         <p className={s.headerText}>
           Looking for a movie?{" "}
           <Link to="/movies" className="headerLink">

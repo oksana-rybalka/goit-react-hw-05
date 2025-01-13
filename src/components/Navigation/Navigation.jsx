@@ -8,13 +8,13 @@ const Navigation = () => {
         to="/"
         className={({ isActive }) => (isActive ? s.activeLink : s.link)}
       >
-        Home
+        Kinoshka
       </NavLink>
       <NavLink
         to="/movies"
         className={({ isActive }) => (isActive ? s.activeLink : s.link)}
       >
-        Movies
+        Click here
       </NavLink>
     </nav>
   );
