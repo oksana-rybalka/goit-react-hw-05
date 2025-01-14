@@ -17,6 +17,7 @@ const MovieCast = () => {
         console.log("Fetching cast for movieId:", movieId);
 
         const data = await fetchMovieCast(movieId);
+
         setCast(data);
         console.log(data);
       } catch (error) {
@@ -46,11 +47,6 @@ const MovieCast = () => {
                     : "https://via.placeholder.com/100x150?text=No+Image"
                 }
                 alt={actor.name}
-                onError={(e) => {
-                  console.error("Image failed to load:", e.target.src);
-                  e.target.src =
-                    "https://via.placeholder.com/100x150?text=No+Image";
-                }}
                 className={s.castImage}
               />
               <p className={s.castName}>{actor.name}</p>

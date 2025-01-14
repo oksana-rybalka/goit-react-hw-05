@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 
 const MovieReviews = () => {
-  const [movieId] = useParams();
+  const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

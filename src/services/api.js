@@ -67,6 +67,7 @@ export const fetchMovieCast = async (movieId) => {
   try {
     const response = await axios.get(url, options);
     return response.data.cast;
+    console.log(response.data.cast);
   } catch (error) {
     console.error("Error fetching movie cast:", error.message);
     throw new Error("Failed to fetch movie cast.");
