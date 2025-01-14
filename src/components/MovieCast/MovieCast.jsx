@@ -11,6 +11,7 @@ const MovieCast = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
+    if (!movieId) return;
     const getMovieCast = async () => {
       setIsLoading(true);
       try {
@@ -44,7 +45,7 @@ const MovieCast = () => {
                 src={
                   actor.profile_path
                     ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
-                    : "https://via.placeholder.com/100x150?text=No+Image"
+                    : "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg"
                 }
                 alt={actor.name}
                 className={s.castImage}

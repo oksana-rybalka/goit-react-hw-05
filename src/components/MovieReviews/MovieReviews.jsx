@@ -15,7 +15,7 @@ const MovieReviews = () => {
       setIsLoading(true);
       try {
         const data = await fetchMovieReviews(movieId);
-        setReviews(data.results);
+        setReviews(data);
       } catch (error) {
         setError("Failed to fetch movie reviews. Please try again later.");
       } finally {
