@@ -14,10 +14,12 @@ const MovieReviews = lazy(() =>
   import("./components/MovieReviews/MovieReviews")
 );
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+const Navigation = lazy(() => import("./components/Navigation/Navigation"));
 
 function App() {
   return (
     <div className={s.app}>
+      <Navigation />
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

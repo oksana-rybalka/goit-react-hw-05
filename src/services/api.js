@@ -55,6 +55,8 @@ export const fetchMovieDetails = async (movieId) => {
 };
 
 export const fetchMovieCast = async (movieId) => {
+  console.log("Fetching cast for movieId:", movieId);
+
   const url = `${API_BASE_URL}/movie/${movieId}/credits`;
   const options = {
     headers: {
@@ -85,6 +87,7 @@ export const fetchMovieReviews = async (movieId) => {
 
   try {
     const response = await axios.get(url, options);
+    console.log(response.data);
     return response.data.results;
   } catch (error) {
     console.error("Error fetching movie reviews:", error.message);

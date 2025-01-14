@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { fetchMovieReviews } from "../../services/api";
 import s from "./MovieReviews.module.css";
+import { useParams } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
-const MovieReviews = ({ movieId }) => {
+const MovieReviews = () => {
+  const [movieId] = useParams();
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,10 +23,12 @@ const MovieReviews = ({ movieId }) => {
       }
     };
 
-    getMovieReviews();
+    if (movieId) {
+      getMovieReviews();
+    }
   }, [movieId]);
 
-  if (isLoading) return <p>Loading reviews...</p>;
+  if (isLoading) return <Spinner />;
   if (error) return <p className={s.error}>{error}</p>;
 
   return (
@@ -32,10 +36,10 @@ const MovieReviews = ({ movieId }) => {
       <h3 className={s.title}>Reviews</h3>
       <ul className={s.reviewsList}>
         {reviews.length > 0 ? (
-          reviews.map(({ id, author, content }) => (
-            <li key={id} className={s.reviewItem}>
-              <h4 className={s.reviewAuthor}>Author: {author}</h4>
-              <p className={s.reviewContent}>{content}</p>
+          reviews.map((review) => (
+            <li key={review.id} className={s.reviewItem}>
+              <h4 className={s.reviewAuthor}>Author: {review.author}</h4>
+              <p className={s.reviewContent}>{review.content}</p>
             </li>
           ))
         ) : (
@@ -44,10 +48,6 @@ const MovieReviews = ({ movieId }) => {
       </ul>
     </div>
   );
-};
-
-MovieReviews.propTypes = {
-  movieId: PropTypes.string.isRequired,
 };
 
 export default MovieReviews;

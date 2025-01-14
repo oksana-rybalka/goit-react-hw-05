@@ -1,69 +1,26 @@
-.homepage {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
-
-.homepageHeader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #1f1e20;
-  color: #fff;
-  padding: 20px 30px;
-  z-index: 1000;
-  text-align: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.headerText {
-  margin: 0;
-}
-
-.headerLink {
-  color: rbg(111, 20, 195);
-  text-decoration: none;
-}
-
 .homepageMain {
-  margin-top: 80px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .titleTrending {
-  padding-top: 30px;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: blueviolet;
-}
-
-.loadingMessage,
-.errorMessage {
-  color: red;
-  font-size: 18px;
-}
-
-/* .movieCard {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  width: calc(100% - );
-}
-
-.movieImg {
-  width: 150px;
-  height: 225px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.movieTitle {
-  font-size: 16px;
+  font-size: 2rem;
   font-weight: bold;
-  margin-top: 0;
-} */
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}

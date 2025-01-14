@@ -12,19 +12,13 @@ import Spinner from "../../components/Spinner/Spinner";
 
 const MovieDetailPage = () => {
   const { movieId } = useParams();
-  const location = useLocation(); 
+  const location = useLocation();
   const navigate = useNavigate();
-  
-  const movieRef = useRef(null); 
-  
+  const movieRef = useRef(null);
   const [movie, setMovie] = useState(null);
-  
-  const [error, setError] = useState(null); 
-  
-  const [isLoading, setIsLoading] = useState(false); 
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  
-  
   const previousLocation = location.state?.from || "/movies";
 
   useEffect(() => {
@@ -32,8 +26,8 @@ const MovieDetailPage = () => {
       setIsLoading(true);
       try {
         const data = await fetchMovieDetails(movieId);
-        movieRef.current = data; 
-        setMovie(data); 
+        movieRef.current = data;
+        setMovie(data);
       } catch (error) {
         setError("Failed to fetch movie details. Please try again later.");
       } finally {
@@ -42,18 +36,18 @@ const MovieDetailPage = () => {
     };
 
     getMovieDetails();
-  }, [movieId]); 
+  }, [movieId]);
 
   const handleGoBack = () => {
-    navigate(previousLocation); 
+    navigate(previousLocation);
   };
 
   if (isLoading) {
-    return <Spinner />; 
+    return <Spinner />;
   }
 
   if (error) {
-    return <p className={s.errorMessage}>{error}</p>; 
+    return <p className={s.errorMessage}>{error}</p>;
   }
 
   return (
