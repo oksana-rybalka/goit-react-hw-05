@@ -1,5 +1,5 @@
 .movieDetailPage {
-  margin-top: 60px;
+  margin-top: 80px;
   padding: 20px;
   background-color: #f4f6f9;
   min-height: 100vh;
@@ -9,12 +9,11 @@
   background-color: #3498db;
   color: white;
   border: none;
-  margin-top: 70px;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -81,7 +80,7 @@
 .link {
   color: #3498db;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
