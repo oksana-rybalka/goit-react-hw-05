@@ -1,9 +1,8 @@
-/* Основний контейнер для сторінки */
 .moviesPage {
-  padding-top: 60px; /* Відступ для забезпечення простору під хедером */
+  padding-top: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #f4f6f9; /* Світлий фон для сторінки */
+  background-color: #f4f6f9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
