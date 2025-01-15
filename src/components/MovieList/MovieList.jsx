@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import s from "./MovieList.module.css";
 import PropTypes from "prop-types";
 
-const defaultImg = "https://via.placeholder.com/150x225?text=No+Image";
+const defaultImg =
+  "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
